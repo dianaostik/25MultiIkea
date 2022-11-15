@@ -12,16 +12,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     }      
 
     if(isset($_POST['edit'])){
-    
         $item = ItemController::show();
-        $items = ItemController::index();
         $edit = true;
         
     }  
 
     if(isset($_POST['update'])){
-        
-        ItemController::update();
+        $item = ItemController::update();
         header("Location: ".$_OUTER_PATH."/index.php");
         die;
     }
@@ -46,8 +43,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         if (count($_GET) == 0){
             $items = ItemController::index();
         }
+        }  
     
         
-    }
+    
     $params = ItemController::getfilterParams();
     ?>

@@ -1,5 +1,5 @@
 <form action="" method="get" class="row mt-5" >
-<div class="col-2"><a href = <?=$_OUTER_PATH."./views/item/add.php"?> class="btn btn-outline-warning"> Add new item here </a></div>
+<div class="col-2" ><a href = <?=$_OUTER_PATH."./views/item/add.php"?> class="btn btn-outline-warning"> Add new item here </a></div>
 <div class="col-8 ">
     <div class="row ps-5">
         <div class="col-2">

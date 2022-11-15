@@ -19,9 +19,9 @@
                         <td> <?=$item->price . "€"?> </td>
                         <td> <?=$item->about?> </td>
                         <td>
-                            <form action="" method="post">
+                            <form action=<?=$_OUTER_PATH."/views/item/edit.php"?> method="post">
                                 <input type="hidden" name="id" value=" <?=$item->id?>">
-                                <button type="submit" name="edit" class="btn btn-outline-primary">edit</button>
+                                <button type="submit" name="edit" class="btn btn-outline-success">edit</button>
                             </form>
                         </td>
                         <td>
