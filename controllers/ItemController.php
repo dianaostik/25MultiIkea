@@ -1,5 +1,6 @@
 <?php
 include $_INNER_PATH."./models/Item.php";
+include $_INNER_PATH."/helperClasses/Validator.php";
 
 class ItemController{
 
@@ -10,15 +11,25 @@ class ItemController{
 
 
     public static function store(){
+        if(Validator::validate()){
+            header("Location: "."http://".$_SERVER['SERVER_NAME']."/25MultiIkea/views/item/add.php");
+            die;
+        }
         Item::create();
     }
 
     public static function show(){
-        $item = Item::find($_POST['id']);
+        $item = Item::find($_GET['id']);
         return $item;
     }
 
     public static function update(){
+
+        if(Validator::validate()){
+            header("Location: "."http://".$_SERVER['SERVER_NAME']."/25MultiIkea/views/item/edit.php?edit=&id=".$_GET['id']);
+            die;
+        }
+
        $item = new Item();
        $item->id = $_POST['id'];
        $item->name = $_POST['name'];

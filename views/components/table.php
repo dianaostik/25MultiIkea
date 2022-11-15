@@ -19,14 +19,14 @@
                         <td> <?=$item->price . "€"?> </td>
                         <td> <?=$item->about?> </td>
                         <td>
-                            <form action=<?=$_OUTER_PATH."/views/item/edit.php"?> method="post">
-                                <input type="hidden" name="id" value=" <?=$item->id?>">
+                            <form action=<?=$_OUTER_PATH."/views/item/edit.php"?> method="get">
+                                <input type="hidden" name="id" value="<?=$item->id?>">
                                 <button type="submit" name="edit" class="btn btn-outline-success">edit</button>
                             </form>
                         </td>
                         <td>
                             <form action="" method="post">
-                                <input type="hidden" name="id" value=" <?=$item->id?>">
+                                <input type="hidden" name="id" value="<?=$item->id?>">
                                 <button type="submit" name="destroy" class="btn btn-outline-danger">delete</button>
                             </form>
                         </td>
